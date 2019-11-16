@@ -17,8 +17,8 @@ int main(int argc, const char * argv[]) {
     Clock clock;
     std::vector<int> randomValues1;
     srand(time(NULL));
-    for(int i = 0; i < 10000003; i++) {
-        randomValues1.push_back(rand() % 20000000000000);
+    for(int i = 0; i < 10000001; i++) {
+        randomValues1.push_back(rand() % 20000000);
     }
     int left = 0;
     int right = static_cast<int>((randomValues1.size()) - 1);
@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
     std::vector<int> randomValues4 = randomValues1;
 
     std::chrono::high_resolution_clock::time_point quicksortStart = clock.getStartTime();
-    //printVector(randomValues);
+    //printVector(randomValues1);
     Quicksort sort;
     sort.quicksort(randomValues1, left, right);
     int median = sort.getMedian(randomValues1, left, right);

@@ -56,7 +56,7 @@ int Randomized_Select::Randomized_Select_Median(std::vector<int>& vec, int p, in
     int i = static_cast<int>(vec.size());
     if(i % 2 == 0)
     {
-        return Randomized_Selection(vec, p, r, i/2);
+        return (Randomized_Selection(vec, p, r, i/2) + Randomized_Selection(vec, p, r, i/2+1))/2;
     }
     else
     {
